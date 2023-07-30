@@ -10,7 +10,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(
   cors({
-    origin: "https://eshop-mern-be.vercel.app/",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -19,7 +19,7 @@ app.use("/", express.static("uploads"));
 
 if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({
-    path: "backend/config/.env",
+    path: "config/.env",
   });
 }
 
