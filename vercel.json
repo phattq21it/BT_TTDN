@@ -1,7 +1,6 @@
 {
   "buildCommand": "cd frontend && npm install && npm start",
   "outputDirectory": "client/dist",
-  "framework": "react",
   "rewrites": [
     {
       "source": "/backend/(.*)",
