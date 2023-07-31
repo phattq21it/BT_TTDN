@@ -15,6 +15,7 @@ app.use(
   })
 );
 app.use("/", express.static("uploads"));
+
 //config
 
 if (process.env.NODE_ENV !== "PRODUCTION") {
