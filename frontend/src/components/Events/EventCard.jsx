@@ -12,8 +12,8 @@ const EventCard = ({ active, data }) => {
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  const numDiscount = data.discountPrice;
-  const numOrgin = data.originalPrice;
+  const numDiscount = data && data.discountPrice;
+  const numOrgin = data && data.originalPrice;
   const formatNumber = new Intl.NumberFormat("de-DE", {
     useGrouping: true,
   });
@@ -47,15 +47,15 @@ const EventCard = ({ active, data }) => {
         "
         >
           <img
-            src={`${backend_url}${data.images[0]}`}
+            src={`${backend_url}${data && data.images[0]}`}
             alt=""
             className="w-60% h-auto"
           />
         </div>
       </div>
       <div className="w-full lg:[w-50%] flex flex-col justify-center">
-        <h2 className={`${styles.productTitle}`}>{data.name}</h2>
-        <p>{data.description}</p>
+        <h2 className={`${styles.productTitle}`}>{data && data.name}</h2>
+        <p>{data && data.description}</p>
         <div className="flex py-2 justify-between">
           <div className="flex">
             <h5 className="font-[500] text-[18px] text-[#d55b45] pr-3 line-through">
@@ -66,18 +66,18 @@ const EventCard = ({ active, data }) => {
             </h5>
           </div>
           <span className="pr-3 font-[400] text-[17px] text-[#44a55e]">
-            Đã bán {data?.sold_out}
+            Đã bán {data && data?.sold_out}
           </span>
         </div>
-        <CountDown data={data} />
+        <CountDown data={data && data} />
         <br />
         <div className="flex justify-center items-center">
-          <Link to={`/product/${data._id}?isEvent=true`}>
+          <Link to={`/product/${data && data._id}?isEvent=true`}>
             <div className={`${styles.button} text-[#fff]`}>Xem chi tiết</div>
           </Link>
           <div
             className={`${styles.button} text-[#fff] ml-5`}
-            onClick={() => addToCartHandler(data)}
+            onClick={() => addToCartHandler(data && data)}
           >
             Thêm vào giỏ hàng
           </div>

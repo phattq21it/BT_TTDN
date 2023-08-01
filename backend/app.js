@@ -10,12 +10,11 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(
   cors({
-    origin: "https://shop-fe-iota.vercel.app/",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
 app.use("/", express.static("uploads"));
-
 //config
 
 if (process.env.NODE_ENV !== "PRODUCTION") {

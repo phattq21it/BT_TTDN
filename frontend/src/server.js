@@ -1,2 +1,2 @@
-export const server = "http://shop-api-kappa.vercel.app/api/v2";
-export const backend_url = "http://shop-api-kappa.vercel.app/";
+export const server = "http://localhost:8080/api/v2";
+export const backend_url = "http://localhost:8080/";

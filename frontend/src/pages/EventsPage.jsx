@@ -18,7 +18,6 @@ const EventsPage = () => {
           </div>
 
           <EventCard active={true} data={allEvents && allEvents[0]} />
-          <EventCard active={true} data={allEvents && allEvents[1]} />
           <Footer />
         </div>
       )}
